@@ -1,7 +1,9 @@
-import stylesButton from "./index.module.scss";
+import { FC } from "react";
+// import stylesButton from "./index.module.scss";
+import { ButtonProps } from "./interface";
 
-export const Button = () => {
-  return <button className={`${stylesButton["button"]}`}>Button</button>;
+export const Button: FC<ButtonProps> = (props) => {
+  return <button {...props} />;
 };
 
 export default Button;

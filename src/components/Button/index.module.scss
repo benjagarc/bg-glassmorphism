@@ -1,4 +1,10 @@
 .button {
-    background-color: $warning;
-    color:  $info;
+    background-color: transparent;
+    background-color: rgba(000, 000, 000, 0.3);
+    color:  $light;
+    transition: $transition-normal;
+}
+
+.button:hover {
+    background-color: rgba(000, 000, 000, 0.45);
 }
