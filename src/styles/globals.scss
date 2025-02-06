@@ -1,0 +1,10 @@
+@forward "./_colors.scss";
+@forward "./_fonts.scss";
+@use "./_media_queries.scss" as *;
+@forward "./_spaces_borders.scss";
+@forward "./_transitions_animations.scss";
+@forward "_reset_css.scss";
+
+html {
+  scroll-behavior: smooth;
+}
