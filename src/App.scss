@@ -33,6 +33,12 @@
   }
 }
 
+body {
+  background-image: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+  background-image: url("/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .card {
   padding: 2em;
 }
@@ -40,5 +46,3 @@
 .read-the-docs {
   color: #888;
 }
-
-
