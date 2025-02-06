@@ -2,9 +2,57 @@
 @forward "./_fonts.scss";
 @use "./_media_queries.scss" as *;
 @forward "./_spaces_borders.scss";
-@forward "./_transitions_animations.scss";
+@use "./_transitions_animations.scss" as *;
 @forward "_reset_css.scss";
 
 html {
   scroll-behavior: smooth;
+}
+
+.bg-light {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(256, 256, 256, 0.2);
+  transition: $transition-normal;
+}
+
+.bg-x2light {
+  background-color: transparent;
+  background-color: rgba(256, 256, 256, 0.3);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.bg-x3light {
+  background-color: transparent;
+  background-color: rgba(256, 256, 256, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.bg-dark {
+  background-color: transparent;
+  background-color: rgba(000, 000, 000, 0.25);
+  transition: $transition-normal;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.bg-x2dark {
+  background-color: transparent;
+  background-color: rgba(000, 000, 000, 0.3);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+}
+
+.bg-x3dark {
+  background-color: transparent;
+  background-color: rgba(000, 000, 000, 0.45);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+.bg-light:hover {
+  color: rgba(000, 000, 000, 0.45);
+  transform: scale(1.05);
 }
