@@ -1,6 +1,7 @@
 // import './styles/globals.scss';
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
+import Button from "@components/Button";
 import "./App.scss";
 // import Button from "./components/Button";
 
@@ -16,14 +17,16 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1> */}
-      <div
+      {/* <div
         style={{
           display: "flex",
           gap: "1rem",
           width: "100vw",
           justifyContent: "center",
           alignItems: "center",
-          marginBottom: "1rem"
+          marginBottom: "1rem",
+          position: "fixed",
+          top: "250px"
         }}
       >
         <div
@@ -46,6 +49,8 @@ function App() {
           width: "100vw",
           justifyContent: "center",
           alignItems: "center",
+          position: "fixed",
+          top: "500px"
         }}
       >
         <div
@@ -60,7 +65,10 @@ function App() {
           style={{ display: "block", width: "200px", height: "200px" }}
           className="bg-x3light"
         ></div>
+      </div> */}
+      <div className="bg-dark" style={{ width: "60%", height: "5vh", position: "fixed", top: "500px", borderRadius: "0 1rem 1rem 0"}}>
       </div>
+        <Button>Mundo </Button>
       {/* <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p> */}
