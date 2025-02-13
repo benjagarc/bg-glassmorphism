@@ -17,6 +17,7 @@ $shadow-btn: 0 0 0 3px rgba($primary, 0.5);
   margin: $spacing-sm;
   cursor: pointer;
   transition: $transition-normal;
+  border-radius: 0.875rem;
 
   &:hover {
     background-color: darken($primary, 5%) ;
