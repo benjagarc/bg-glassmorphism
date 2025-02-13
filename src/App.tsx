@@ -66,12 +66,18 @@ function App() {
           className="bg-x3light"
         ></div>
       </div> */}
-      <div className="bg-dark" style={{ width: "60%", height: "5vh", position: "fixed", top: "500px", borderRadius: "0 1rem 1rem 0"}}>
+      <div
+        className="bg-dark"
+        style={{
+          width: "60%",
+          height: "5vh",
+          position: "fixed",
+          top: "500px",
+          borderRadius: "0 1rem 1rem 0",
+        }}
+      >
+        <Button variant="success">Mundo </Button>
       </div>
-        <Button>Mundo </Button>
-      {/* <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p> */}
     </>
   );
 }
