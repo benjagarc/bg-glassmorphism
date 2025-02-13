@@ -3,12 +3,12 @@ import stylesButton from "./index.module.scss";
 import { ButtonProps } from "./interface";
 
 export const Button: FC<ButtonProps> = (props) => {
-  const { className, variant, size } = props;
+  const { className, variant, size, outline } = props;
   return (
     <button
       className={`${className ?? ""} ${stylesButton["button"]} ${
-        variant && stylesButton[variant]
-      } ${size && stylesButton[size]}`}
+        outline && stylesButton["outline"]
+      } ${variant && stylesButton[variant]} ${size && stylesButton[size]}`}
       {...props}
     />
   );

@@ -9,4 +9,5 @@ export interface ButtonProps
     | "info"
     | string;
   size?: "small" | "medium" | "large";
+  outline: boolean;
 }

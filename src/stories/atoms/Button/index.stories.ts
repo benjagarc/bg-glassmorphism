@@ -43,3 +43,11 @@ export const Sizes: Story = {
     },
   },
 };
+
+export const Outline: Story = {
+    args: {
+        children: "Hello world",
+        variant: "primary",
+        outline: true
+    }
+};
