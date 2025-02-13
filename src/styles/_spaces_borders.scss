@@ -1,9 +1,9 @@
 //spaces
 
-$spacing-sm: 8px;
-$spacing-md: 16px;
-$spacing-lg: 24px;
-$spacing-xl: 32px;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.5rem;
+$spacing-xl: 2rem;
 
 // borders
 $border-radius-sm: 3px;
@@ -14,3 +14,10 @@ $border-radius-lg: 12px;
 $padding-sm: 8px 16px;
 $padding-md: 12px 24px;
 $padding-lg: 16px 32px;
+
+// button 
+
+$btn-pd-sm: 0.5rem 1rem;
+$btn-pd-md: 0.75rem 1.5rem;
+$btn-pd-lg: 1rem 2rem;
+
