@@ -15,6 +15,18 @@ $shadow-btn: 0 0 0 3px rgba($primary, 0.5);
   }
 }
 
+@mixin variationBackgroundColor($color) {
+  background-color: $color !important;
+
+  &:hover {
+    background-color: darken($color, 10%) !important;
+  }
+
+  &:focus {
+    @include shadow-color($color);
+  }
+}
+
 .button {
   background-color: $primary;
   border: none;
@@ -45,60 +57,20 @@ $shadow-btn: 0 0 0 3px rgba($primary, 0.5);
 }
 
 .secondary {
-  background-color: $secondary !important;
-
-  &:hover {
-    background-color: darken($secondary, 10%) !important;
-  }
-
-  &:focus {
-    @include shadow-color($secondary);
-  }
+  @include variationBackgroundColor($secondary);
 }
 
 .success {
-  background-color: $success !important;
-
-  &:hover {
-    background-color: darken($success, 10%) !important;
-  }
-
-  &:focus {
-    @include shadow-color($success);
-  }
+  @include variationBackgroundColor($success);
 }
 .warning {
-  background-color: $warning !important;
-
-  &:hover {
-    background-color: darken($warning, 10%) !important;
-  }
-
-  &:focus {
-    @include shadow-color($warning);
-  }
+  @include variationBackgroundColor($warning);
 }
 .danger {
-  background-color: $danger !important;
-
-  &:hover {
-    background-color: darken($danger, 10%) !important;
-  }
-
-  &:focus {
-    @include shadow-color($danger);
-  }
+  @include variationBackgroundColor($danger);
 }
 .info {
-  background-color: $info !important;
-
-  &:hover {
-    background-color: darken($info, 10%) !important;
-  }
-
-  &:focus {
-    @include shadow-color($info);
-  }
+  @include variationBackgroundColor($info);
 }
 
 .outline.primary,
