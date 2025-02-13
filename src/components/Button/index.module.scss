@@ -13,14 +13,15 @@ $shadow-btn: 0 0 0 3px rgba($primary, 0.5);
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 1rem;
-  margin: $spacing-sm;
+  font-size: $font-size-md;
+  margin: $spacing-md;
   cursor: pointer;
   transition: $transition-normal;
   border-radius: 0.875rem;
+  padding: $btn-pd-md;
 
   &:hover {
-    background-color: darken($primary, 5%) ;
+    background-color: darken($primary, 5%);
   }
 
   &:active {
@@ -88,4 +89,22 @@ $shadow-btn: 0 0 0 3px rgba($primary, 0.5);
   &:focus {
     @include shadow-color($info);
   }
+}
+
+.small {
+  font-size: $font-size-sm;
+  padding: $btn-pd-sm;
+  margin: $spacing-sm;
+}
+
+.medium {
+  font-size: $font-size-md;
+  padding: $btn-pd-md;
+  margin: $spacing-md;
+}
+
+.large {
+  font-size: $font-size-lg;
+  padding: $btn-pd-lg;
+  margin: $spacing-lg;
 }
