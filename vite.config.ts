@@ -1,11 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
-// import { fileURLToPath } from "url";
 import path from "path";
 
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
   resolve: {
@@ -17,7 +13,15 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        additionalData: `@use "@styles/globals.scss" as *;`,
+        additionalData: `
+          @use "@styles/_colors.scss" as *;
+          @forward "@styles/_fonts.scss";
+          @use "@styles/_media_queries.scss" as *;
+          @forward "@styles/_spaces_borders.scss";
+          @use "@styles/_transitions_animations.scss" as *;
+          @use "@styles/_reset_css.scss" as *;
+          `,
+        api: "modern"
       },
     },
   },
