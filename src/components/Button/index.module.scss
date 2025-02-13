@@ -1,10 +1,90 @@
-.button {
-    background-color: transparent;
-    background-color: rgba(000, 000, 000, 0.3);
-    color:  $light;
-    transition: $transition-normal;
+$padding-btn: clamp(0.5rem, 2vw, 0.85rem) clamp(1rem, 2vw, 2rem);
+$shadow-btn: 0 0 0 3px rgba($primary, 0.5);
+
+@mixin shadow-color($color) {
+  box-shadow: 0 0 0 3px rgba($color, 0.5);
 }
 
-.button:hover {
-    background-color: rgba(000, 000, 000, 0.45);
+.button {
+  background-color: $primary;
+  border: none;
+  color: white;
+  padding: $padding-btn;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1rem;
+  margin: $spacing-sm;
+  cursor: pointer;
+  transition: $transition-normal;
+
+  &:hover {
+    background-color: darken($primary, 5%) ;
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:focus {
+    outline: none;
+    @include shadow-color($primary);
+  }
+}
+
+.secondary {
+  background-color: $secondary !important;
+
+  &:hover {
+    background-color: darken($secondary, 10%) !important;
+  }
+
+  &:focus {
+    @include shadow-color($secondary);
+  }
+}
+
+.success {
+  background-color: $success !important;
+
+  &:hover {
+    background-color: darken($success, 10%) !important;
+  }
+
+  &:focus {
+    @include shadow-color($success);
+  }
+}
+.warning {
+  background-color: $warning !important;
+
+  &:hover {
+    background-color: darken($warning, 10%) !important;
+  }
+
+  &:focus {
+    @include shadow-color($warning);
+  }
+}
+.danger {
+  background-color: $danger !important;
+
+  &:hover {
+    background-color: darken($danger, 10%) !important;
+  }
+
+  &:focus {
+    @include shadow-color($danger);
+  }
+}
+.info {
+  background-color: $info !important;
+
+  &:hover {
+    background-color: darken($info, 10%) !important;
+  }
+
+  &:focus {
+    @include shadow-color($info);
+  }
 }
