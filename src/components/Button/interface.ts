@@ -8,4 +8,5 @@ export interface ButtonProps
     | "danger"
     | "info"
     | string;
+  size?: "small" | "medium" | "large";
 }
