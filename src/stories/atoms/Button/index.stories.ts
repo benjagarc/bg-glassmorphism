@@ -15,7 +15,11 @@ const meta = {
           summary: "primary",
         },
       },
-      options:[ "primary",  "secondary", "success", "danger", "warning", "info"],
+      options: ["primary", "secondary", "success", "danger", "warning", "info"],
+    },
+    size: {
+      control: { type: "select" },
+      options: ["small", "medium", "large"],
     },
   },
 } satisfies Meta<typeof Button>;
@@ -27,5 +31,15 @@ type Story = StoryObj<typeof meta>;
 export const Colors: Story = {
   args: {
     children: "Hello world",
+  },
+};
+
+export const Sizes: Story = {
+  args: {
+    children: "Hello world",
+    size: {
+      control: { type: "select" },
+      options: ["small", "medium", "large"],
+    },
   },
 };
