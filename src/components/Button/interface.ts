@@ -8,5 +8,4 @@ export interface ButtonProps
     | "danger"
     | "info"
     | string;
-    
 }
