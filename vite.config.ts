@@ -15,9 +15,9 @@ export default defineConfig({
       scss: {
         additionalData: `
           @use "@styles/_colors.scss" as *;
-          @forward "@styles/_fonts.scss";
+          @use "@styles/_fonts.scss" as *;
           @use "@styles/_media_queries.scss" as *;
-          @forward "@styles/_spaces_borders.scss";
+          @use "@styles/_spaces_borders.scss" as *;
           @use "@styles/_transitions_animations.scss" as *;
           @use "@styles/_reset_css.scss" as *;
           `,
