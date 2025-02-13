@@ -1,4 +1,4 @@
-@forward "./_colors.scss";
+@use "./_colors.scss" as *;
 @forward "./_fonts.scss";
 @use "./_media_queries.scss" as *;
 @forward "./_spaces_borders.scss";
@@ -10,49 +10,59 @@ html {
 }
 
 .bg-light {
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  background-color: rgba(256, 256, 256, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background-color: rgba(256, 256, 256, 0.05);
   transition: $transition-normal;
+  box-shadow:  1px 1px 1px rgba(000,000,000, 0.5);
+  color: $light;
 }
 
 .bg-x2light {
   background-color: transparent;
-  background-color: rgba(256, 256, 256, 0.3);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  background-color: rgba(256, 256, 256, 0.2);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  box-shadow:  1px 1px 1px rgba(000,000,000, 0.5);
+  color: $light;
 }
 
 .bg-x3light {
   background-color: transparent;
-  background-color: rgba(256, 256, 256, 0.45);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background-color: rgba(256, 256, 256, 0.3);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  box-shadow:  1px 1px 1px rgba(000,000,000, 0.5);
+  color: $light;
 }
 
 .bg-dark {
   background-color: transparent;
-  background-color: rgba(000, 000, 000, 0.25);
+  background-color: rgba(000, 000, 000, 0.1);
   transition: $transition-normal;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  color: $light;
+  box-shadow: 1px 1px 1px rgba(000,000,000, 0.5);
+  color: $light;
 }
 
 .bg-x2dark {
   background-color: transparent;
-  background-color: rgba(000, 000, 000, 0.3);
-  backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
+  background-color: rgba(000, 000, 000, 0.2);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  color: $light;
+  box-shadow: 1px 1px 1px rgba(000,000,000, 0.5);
+  color: $light;
 }
 
 .bg-x3dark {
   background-color: transparent;
-  background-color: rgba(000, 000, 000, 0.45);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-}
-
-.bg-light:hover {
-  color: rgba(000, 000, 000, 0.45);
-  transform: scale(1.05);
+  background-color: rgba(000, 000, 000, 0.3);
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+  color: $light;
+  box-shadow: 1px 1px 1px rgba(000,000,000, 0.5);
+  color: $light;
 }
