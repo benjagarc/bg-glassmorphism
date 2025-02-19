@@ -1,9 +1,9 @@
 @use "./_colors.scss" as *;
-@forward "./_fonts.scss";
+@use  "./_fonts.scss" as *;
 @use "./_media_queries.scss" as *;
-@forward "./_spaces_borders.scss";
+@use "./_spaces_borders.scss" as *;
 @use "./_transitions_animations.scss" as *;
-@forward "_reset_css.scss";
+@use  "_reset_css.scss" as *;
 
 html {
   scroll-behavior: smooth;
