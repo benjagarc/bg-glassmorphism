@@ -3,6 +3,7 @@
 // import viteLogo from '/vite.svg'
 import Button from "@components/Button";
 import "./App.scss";
+import Input from "@components/Input";
 // import Button from "./components/Button";
 
 function App() {
@@ -76,7 +77,7 @@ function App() {
           borderRadius: "0 1rem 1rem 0",
         }}
       >
-        <Button variant="success">Mundo </Button>
+        <Input name="test"  />
       </div>
     </>
   );
