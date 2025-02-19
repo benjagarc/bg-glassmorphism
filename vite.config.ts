@@ -22,7 +22,7 @@ export default defineConfig({
           @use "@styles/_reset_css.scss" as *;
           @use "@styles/globals.scss" as *;
           `,
-        api: "modern"
+        api: "modern",
       },
     },
   },
