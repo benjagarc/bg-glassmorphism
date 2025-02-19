@@ -1,20 +1,24 @@
 @use "./_colors.scss" as *;
-@use  "./_fonts.scss" as *;
+@use "./_fonts.scss" as *;
 @use "./_media_queries.scss" as *;
 @use "./_spaces_borders.scss" as *;
 @use "./_transitions_animations.scss" as *;
-@use  "_reset_css.scss" as *;
+@use "_reset_css.scss" as *;
+
+// src/styles/main.scss
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 html {
   scroll-behavior: smooth;
 }
+
 
 .bg-light {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   background-color: rgba(256, 256, 256, 0.05);
   transition: $transition-normal;
-  box-shadow:  1px 1px 1px rgba(000,000,000, 0.5);
+  box-shadow: 1px 1px 1px rgba(000, 000, 000, 0.5);
   color: $light;
 }
 
@@ -23,7 +27,7 @@ html {
   background-color: rgba(256, 256, 256, 0.2);
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
-  box-shadow:  1px 1px 1px rgba(000,000,000, 0.5);
+  box-shadow: 1px 1px 1px rgba(000, 000, 000, 0.5);
   color: $light;
 }
 
@@ -32,7 +36,7 @@ html {
   background-color: rgba(256, 256, 256, 0.3);
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
-  box-shadow:  1px 1px 1px rgba(000,000,000, 0.5);
+  box-shadow: 1px 1px 1px rgba(000, 000, 000, 0.5);
   color: $light;
 }
 
@@ -43,7 +47,7 @@ html {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   color: $light;
-  box-shadow: 1px 1px 1px rgba(000,000,000, 0.5);
+  box-shadow: 1px 1px 1px rgba(000, 000, 000, 0.5);
   color: $light;
 }
 
@@ -53,7 +57,7 @@ html {
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
   color: $light;
-  box-shadow: 1px 1px 1px rgba(000,000,000, 0.5);
+  box-shadow: 1px 1px 1px rgba(000, 000, 000, 0.5);
   color: $light;
 }
 
@@ -63,6 +67,6 @@ html {
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
   color: $light;
-  box-shadow: 1px 1px 1px rgba(000,000,000, 0.5);
+  box-shadow: 1px 1px 1px rgba(000, 000, 000, 0.5);
   color: $light;
 }
