@@ -20,8 +20,7 @@ export default defineConfig({
           @use "@styles/_spaces_borders.scss" as *;
           @use "@styles/_transitions_animations.scss" as *;
           @use "@styles/_reset_css.scss" as *;
-          @use "@styles/globals.scss" as *;
-          `,
+          `, 
         api: "modern"
       },
     },
