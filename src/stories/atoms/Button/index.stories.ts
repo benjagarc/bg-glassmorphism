@@ -16,6 +16,7 @@ const meta = {
         },
       },
       options: ["primary", "secondary", "success", "danger", "warning", "info"],
+      control: { type: "select" },
     },
     size: {
       control: { type: "select" },
@@ -45,9 +46,9 @@ export const Sizes: Story = {
 };
 
 export const Outline: Story = {
-    args: {
-        children: "Hello world",
-        variant: "primary",
-        outline: true
-    }
+  args: {
+    children: "Hello world",
+    variant: "primary",
+    outline: true,
+  },
 };

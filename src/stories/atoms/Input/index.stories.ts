@@ -10,6 +10,7 @@ const meta = {
   tags: ["autodocs"],
   argTypes: {
     type: {
+      control: { type: "select" },
       option: ["text", "number", "email", "password"],
     },
   },
@@ -29,5 +30,12 @@ export const Error: Story = {
   args: {
     name: "input",
     error: true,
+  },
+};
+
+export const Dark: Story = {
+  args: {
+    name: "input",
+    dark: true,
   },
 };
