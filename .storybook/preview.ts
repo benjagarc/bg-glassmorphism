@@ -1,5 +1,6 @@
 import type { Preview } from "@storybook/react";
-import '../src/styles/globals.scss'
+import "../src/styles/globals.scss";
+import { ContainerStories } from "./container";
 
 const preview: Preview = {
   parameters: {
@@ -10,6 +11,7 @@ const preview: Preview = {
       },
     },
   },
+  decorators: [ContainerStories],
 };
 
 export default preview;
