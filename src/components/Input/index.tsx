@@ -3,10 +3,12 @@ import { InputProps } from "./interface";
 import styles from "./index.module.scss";
 
 export const Input: FC<InputProps> = (props) => {
-  const { className } = props;
+  const { className, error } = props;
   return (
     <input
-    className={`${className ?? ""} ${styles["custom-input"]} bg-x3dark`}
+      className={`${className ?? ""} ${styles["custom-input"]} ${
+        error ? styles["error"] : ""
+      } bg-x2dark`}
       {...props}
     />
   );

@@ -24,3 +24,10 @@ export const Basic: Story = {
     name: "input",
   },
 };
+
+export const Error: Story = {
+  args: {
+    name: "input",
+    error: true,
+  },
+};

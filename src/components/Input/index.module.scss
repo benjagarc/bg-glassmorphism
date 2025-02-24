@@ -3,4 +3,23 @@
   font-size: clamp(0.875rem, 2vw, 1.125rem);
   min-width: clamp(200px, 20vw, 250px);
   font-family: $font-family;
+  border-radius: $border-radius-lg;
+  transition: $transition-normal;
+  padding: $btn-pd-md;
+  &:active {
+    transform: $scale;
+  }
+  &:focus {
+    outline: none;
+    @include shadow-color($primary);
+  }
+}
+
+.error {
+  @include shadow-color($danger);
+
+  &:focus {
+    outline: none;
+    @include shadow-color($danger);
+  }
 }
