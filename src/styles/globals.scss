@@ -7,13 +7,12 @@
 @use "_mixins.scss" as *;
 
 // src/styles/main.scss
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 
 html {
   scroll-behavior: smooth;
   font-family: $font-family;
 }
-
 
 .bg-light {
   backdrop-filter: blur(20px);
@@ -21,7 +20,7 @@ html {
   background-color: rgba(256, 256, 256, 0.05);
   transition: $transition-normal;
   box-shadow: 1px 1px 1px rgba(000, 000, 000, 0.5);
-  color: $light;
+  color: $dark;
 }
 
 .bg-x2light {
@@ -30,7 +29,7 @@ html {
   backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
   box-shadow: 1px 1px 1px rgba(000, 000, 000, 0.5);
-  color: $light;
+  color: $dark;
 }
 
 .bg-x3light {
@@ -39,7 +38,7 @@ html {
   backdrop-filter: blur(40px);
   -webkit-backdrop-filter: blur(40px);
   box-shadow: 1px 1px 1px rgba(000, 000, 000, 0.5);
-  color: $light;
+  color: $dark;
 }
 
 .bg-dark {
