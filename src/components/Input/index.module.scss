@@ -1,0 +1,6 @@
+.custom-input {
+  padding: clamp(0.25rem, 2vw, 0.75rem);
+  font-size: clamp(0.875rem, 2vw, 1.125rem);
+  min-width: clamp(200px, 20vw, 250px);
+  font-family: $font-family;
+}
