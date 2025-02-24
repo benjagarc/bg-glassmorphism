@@ -4,6 +4,7 @@
 @use "./_spaces_borders.scss" as *;
 @use "./_transitions_animations.scss" as *;
 @use "_reset_css.scss" as *;
+@use "_mixins.scss" as *;
 
 // src/styles/main.scss
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
