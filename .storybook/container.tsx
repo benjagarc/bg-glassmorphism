@@ -6,12 +6,12 @@ export const ContainerStories = (Story) => (
       backgroundImage: "url('/circles.png')",
       backgroundSize: "cover",
       backgroundPosition: "center",
-      minHeight: "30vh",
+      minHeight: "40vh",
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
       padding: "20px",
-      minWidth: "70vw",
+      minWidth: "95vw",
     }}
   >
     <Story />
