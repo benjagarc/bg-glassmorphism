@@ -3,7 +3,7 @@ import React from "react";
 export const ContainerStories = (Story) => (
   <div
     style={{
-      backgroundImage: "url('/circles.png')",
+      backgroundImage: "url('/bg-circles.png')",
       backgroundSize: "cover",
       backgroundPosition: "center",
       minHeight: "40vh",
