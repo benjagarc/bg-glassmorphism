@@ -22,19 +22,6 @@ const config: StorybookConfig = {
         "@styles": path.resolve(__dirname, "../src/styles"),
       },
     };
-    config.css.preprocessorOptions = {
-      scss: {
-        additionalData: `
-          @use "@styles/_colors.scss" as *;
-          @use "@styles/_fonts.scss" as *;
-          @use "@styles/_media_queries.scss" as *;
-          @use "@styles/_spaces_borders.scss" as *;
-          @use "@styles/_transitions_animations.scss" as *;
-          @use "@styles/_reset_css.scss" as *;
-          @use "@styles/globals.scss" as *;
-        `,
-      },
-    };
     return config;
   },
 };
