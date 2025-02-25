@@ -55,6 +55,11 @@ $shadow-btn: 0 0 0 3px rgba($primary, 0.5);
     outline: none;
     @include shadow-color($primary);
   }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.75;
+  }
 }
 
 .secondary {

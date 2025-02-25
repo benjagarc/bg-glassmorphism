@@ -17,6 +17,17 @@ const meta = {
         },
       },
     },
+    disabled: {
+      description: "ou can choose whether to disable the button or not.",
+      control: {
+        type: "boolean",
+      },
+      table: {
+        defaultValue: {
+          summary: "false",
+        },
+      },
+    },
     outline: {
       control: { type: "boolean" },
       description:
@@ -26,8 +37,8 @@ const meta = {
           summary: "true | false",
         },
         defaultValue: {
-          summary: "false"
-        }
+          summary: "false",
+        },
       },
     },
     variant: {
@@ -88,5 +99,12 @@ export const Outline: Story = {
     children: "Hello world",
     variant: "primary",
     outline: true,
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    children: "Hello world",
+    disabled: true,
   },
 };
