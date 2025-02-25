@@ -11,7 +11,24 @@ const meta = {
   argTypes: {
     type: {
       control: { type: "select" },
+      description: "You can choose from four different types of input fields.",
       option: ["text", "number", "email", "password"],
+      table: {
+        defaultValue: {
+          summary: "text",
+        },
+        type: {
+          summary: `text | number | email | password`,
+        },
+      },
+    },
+    error: {
+      control: { type: "boolean" },
+      description: "You can set your input field to red",
+    },
+    dark: {
+      control: { type: "boolean" },
+      description: "You can set your input field to a dark theme",
     },
   },
 } satisfies Meta<typeof Input>;
