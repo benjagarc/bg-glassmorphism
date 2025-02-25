@@ -73,6 +73,7 @@ export const Colors: Story = {
 export const Sizes: Story = {
   args: {
     children: "Hello world",
+    size: "small",
   },
   argTypes: {
     size: {
