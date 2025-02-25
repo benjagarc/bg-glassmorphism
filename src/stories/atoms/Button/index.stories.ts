@@ -18,7 +18,7 @@ const meta = {
       },
     },
     disabled: {
-      description: "ou can choose whether to disable the button or not.",
+      description: "You can choose whether to disable the button or not.",
       control: {
         type: "boolean",
       },
