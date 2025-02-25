@@ -13,6 +13,10 @@
     outline: none;
     @include shadow-color($primary);
   }
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.75;
+  }
 }
 
 .error {

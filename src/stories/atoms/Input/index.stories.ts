@@ -9,6 +9,35 @@ const meta = {
   },
   tags: ["autodocs"],
   argTypes: {
+    disabled: {
+      description: "ou can choose whether to disable the button or not.",
+      control: {
+        type: "boolean",
+      },
+      table: {
+        defaultValue: {
+          summary: "false",
+        },
+      },
+    },
+    error: {
+      control: { type: "boolean" },
+      description: "You can set your input field to red",
+      table: {
+        defaultValue: {
+          summary: "false",
+        },
+      },
+    },
+    dark: {
+      control: { type: "boolean" },
+      description: "You can set your input field to a dark theme",
+      table: {
+        defaultValue: {
+          summary: "false",
+        },
+      },
+    },
     type: {
       control: { type: "select" },
       description: "You can choose from four different types of input fields.",
@@ -21,24 +50,6 @@ const meta = {
           summary: `text | number | email | password`,
         },
       },
-    },
-    error: {
-      control: { type: "boolean" },
-      description: "You can set your input field to red",
-      table: {
-        defaultValue: {
-          summary: "false"
-        }
-      }
-    },
-    dark: {
-      control: { type: "boolean" },
-      description: "You can set your input field to a dark theme",
-      table: {
-        defaultValue: {
-          summary: "false"
-        }
-      }
     },
   },
 } satisfies Meta<typeof Input>;
@@ -66,3 +77,10 @@ export const Dark: Story = {
     dark: true,
   },
 };
+
+export const Disabled: Story = {
+  args: {
+    name: "input",
+    disabled: true,
+  }
+}
