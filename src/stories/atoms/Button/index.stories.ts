@@ -9,10 +9,33 @@ const meta = {
   },
   tags: ["autodocs"],
   argTypes: {
+    children: {
+      description: "You can choose whether to display text or pass children.",
+      table: {
+        type: {
+          summary: "string | children",
+        },
+      },
+    },
+    outline: {
+      control: { type: "boolean" },
+      description:
+        "You can choose whether to display the button with an outline or not",
+      table: {
+        type: {
+          summary: "true | false",
+        },
+      },
+    },
     variant: {
+      description:
+        "You can choose from six different color variants for the button.",
       table: {
         defaultValue: {
           summary: "primary",
+        },
+        type: {
+          summary: `primary |  secondary | success | danger | warning |  info`,
         },
       },
       options: ["primary", "secondary", "success", "danger", "warning", "info"],
@@ -21,6 +44,12 @@ const meta = {
     size: {
       control: { type: "select" },
       options: ["small", "medium", "large"],
+      description: "You can choose from three different button sizes.",
+      table: {
+        type: {
+          summary: "small | medium | large",
+        },
+      },
     },
   },
 } satisfies Meta<typeof Button>;
@@ -38,6 +67,8 @@ export const Colors: Story = {
 export const Sizes: Story = {
   args: {
     children: "Hello world",
+  },
+  argTypes: {
     size: {
       control: { type: "select" },
       options: ["small", "medium", "large"],
