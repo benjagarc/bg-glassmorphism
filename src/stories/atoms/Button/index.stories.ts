@@ -25,6 +25,9 @@ const meta = {
         type: {
           summary: "true | false",
         },
+        defaultValue: {
+          summary: "false"
+        }
       },
     },
     variant: {
@@ -46,6 +49,9 @@ const meta = {
       options: ["small", "medium", "large"],
       description: "You can choose from three different button sizes.",
       table: {
+        defaultValue: {
+          summary: "medium",
+        },
         type: {
           summary: "small | medium | large",
         },

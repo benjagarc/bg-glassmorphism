@@ -25,10 +25,20 @@ const meta = {
     error: {
       control: { type: "boolean" },
       description: "You can set your input field to red",
+      table: {
+        defaultValue: {
+          summary: "false"
+        }
+      }
     },
     dark: {
       control: { type: "boolean" },
       description: "You can set your input field to a dark theme",
+      table: {
+        defaultValue: {
+          summary: "false"
+        }
+      }
     },
   },
 } satisfies Meta<typeof Input>;
