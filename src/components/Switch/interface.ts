@@ -1,4 +1,4 @@
 export interface CheckboxProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
-  variant: "primary" | "secondary" | "success" | "warning" | "danger" | "info";
+  variant?: "primary" | "secondary" | "success" | "warning" | "danger" | "info";
 }

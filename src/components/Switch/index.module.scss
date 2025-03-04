@@ -1,0 +1,65 @@
+@mixin changeBackgroundColor($color) {
+  border: 1px solid $color !important;
+  background-color: $color !important;
+}
+.container-checkbox {
+  position: relative;
+  width: fit-content;
+  transition: $transition-normal;
+}
+
+.custom-label {
+  width: 50px;
+  height: 25px;
+  border-radius: 15px;
+  position: absolute;
+  transition: $transition-normal;
+}
+
+.custom-label::after {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-color: $light;
+  border-radius: 15px;
+  background-color: $light;
+  top: 3px;
+  left: 2px;
+  transition: $transition-normal;
+}
+.checkbox {
+  display: none !important;
+}
+.checkbox:checked + .custom-label {
+  border: 1px solid $primary;
+  background-color: $primary;
+}
+
+.checkbox:checked + .custom-label::after {
+  right: 2px;
+  left: auto;
+}
+
+.checkbox:disabled + .custom-label {
+  cursor: not-allowed;
+}
+
+.checkbox:checked + .secondary {
+  @include changeBackgroundColor($secondary);
+}
+
+.checkbox:checked + .success {
+  @include changeBackgroundColor($success);
+}
+
+.checkbox:checked + .danger {
+  @include changeBackgroundColor($danger);
+}
+.checkbox:checked + .warning {
+  @include changeBackgroundColor($warning);
+}
+.checkbox:checked + .info {
+  @include changeBackgroundColor($info);
+}
+
