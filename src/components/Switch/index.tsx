@@ -9,7 +9,9 @@ export const Checkbox: FC<CheckboxProps> = (props) => {
       <input type="checkbox" {...props} className={`${styles.checkbox} `} />
       <label
         htmlFor={id}
-        className={`${styles["custom-label"]} bg-x3light ${variant ?? ""}`}
+        className={`${styles["custom-label"]} bg-x3light ${
+          variant ? styles[variant] : ""
+        }`}
       />
     </div>
   );
