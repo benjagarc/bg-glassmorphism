@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "test-storybook": "test-storybook"
   },
   "dependencies": {
     "node-sass": "^9.0.0",
@@ -25,7 +26,8 @@
     "@storybook/blocks": "8.5.3",
     "@storybook/react": "8.5.3",
     "@storybook/react-vite": "8.5.3",
-    "@storybook/test": "8.5.3",
+    "@storybook/test": "^8.5.3",
+    "@storybook/test-runner": "^0.22.0",
     "@types/node": "^22.13.1",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",
@@ -36,7 +38,7 @@
     "eslint-plugin-storybook": "^0.11.2",
     "globals": "^15.14.0",
     "sass": "^1.85.0",
-    "storybook": "8.5.3",
+    "storybook": "^8.6.3",
     "typescript": "~5.6.2",
     "typescript-eslint": "^8.18.2",
     "vite": "^6.0.5",
