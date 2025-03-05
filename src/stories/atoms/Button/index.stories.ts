@@ -1,7 +1,7 @@
 import Button from "@components/Button";
 import { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
+import { expect, jest } from "@storybook/jest";
 import styles from "./index.module.scss";
 
 const meta = {
@@ -81,6 +81,14 @@ const meta = {
         },
         type: {
           summary: `button | submit | reset`,
+        },
+      },
+    },
+    onClick: {
+      description: "Function to be called when the button is clicked",
+      table: {
+        type: {
+          summary: "() => void",
         },
       },
     },
@@ -177,6 +185,23 @@ export const types: Story = {
     const canvas = within(canvasElement);
     const typeButton = await canvas.getByRole("button");
     await expect(typeButton).toBeInTheDocument();
-    await expect(typeButton).toHaveAttribute("type", expect.stringMatching(/button|submit|reset/i));
+    await expect(typeButton).toHaveAttribute(
+      "type",
+      expect.stringMatching(/button|submit|reset/i)
+    );
+  },
+};
+
+export const onClick: Story = {
+  args: {
+    children: "Click me",
+    onClick: jest.fn(),
+  },
+  play: async ({ canvasElement, args }) => {
+    const canvas = within(canvasElement);
+    const onClickButton = await canvas.getByRole("button");
+    await expect(onClickButton).toBeInTheDocument();
+    await userEvent.click(onClickButton);
+    await expect(args.onClick).toHaveBeenCalled();
   },
 };
