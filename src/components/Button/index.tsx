@@ -11,9 +11,9 @@ export const Button: FC<ButtonProps> = (props) => {
         outline && stylesButton["outline"],
         variant && stylesButton[variant],
         size && stylesButton[size],
-        className, // Asegura que className no sobrescriba, sino que se agregue
+        className,
       ]
-        .filter(Boolean) // Filtra valores falsy (como `false` o `undefined`)
+        .filter(Boolean)
         .join(" ")}
       {...props}
     />
