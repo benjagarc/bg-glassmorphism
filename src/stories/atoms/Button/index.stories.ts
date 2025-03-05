@@ -137,6 +137,7 @@ export const Disabled: Story = {
     const disabledButton = await canvas.getByRole("button");
     await expect(disabledButton).toBeInTheDocument();
     await expect(disabledButton).toBeDisabled();
+    await expect(disabledButton).not.toBeEnabled();
   },
 };
 
