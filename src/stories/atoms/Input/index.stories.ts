@@ -61,6 +61,14 @@ const meta = {
         },
       },
     },
+    onBlur: {
+      description: "Function to call when the input loses focus",
+      table: {
+        type: {
+          summary: "() => void",
+        },
+      },
+    }
   },
 } satisfies Meta<typeof Input>;
 
@@ -135,5 +143,19 @@ export const onChange: Story = {
     await userEvent.type(onChangeInput, "Hello world");
     await expect(onChangeInput).toBeInTheDocument();
     await expect(args.onChange).toHaveBeenCalled();
+  }
+}
+
+export const onBlur: Story = {
+  args: {
+    name: "onBlur",
+    onBlur: jest.fn()
+  },
+  play: async ({ canvasElement, args}) => {
+    const canvas = within(canvasElement);
+    const onBlurInput = await canvas.getByRole("textbox");
+    await userEvent.type(onBlurInput, "Hello world");
+    await expect(onBlurInput).toBeInTheDocument();
+    await expect(args.onBlur).toHaveBeenCalled();
   }
 }
