@@ -156,6 +156,7 @@ export const onBlur: Story = {
     const onBlurInput = await canvas.getByRole("textbox");
     await userEvent.type(onBlurInput, "Hello world");
     await expect(onBlurInput).toBeInTheDocument();
+    await onBlurInput.blur();
     await expect(args.onBlur).toHaveBeenCalled();
   }
 }
