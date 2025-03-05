@@ -6,9 +6,11 @@ export const Button: FC<ButtonProps> = (props) => {
   const { className, variant, size, outline } = props;
   return (
     <button
-      className={`${className ?? ""} ${stylesButton["button"]} ${
-        outline && stylesButton["outline"]
-      } ${variant && stylesButton[variant]} ${size && stylesButton[size]}`}
+      className={`${stylesButton["button"]} ${className ?? ""}  ${
+        (outline && stylesButton["outline"]) ?? ""
+      } ${(variant && stylesButton[variant]) ?? ""} ${
+        (size && stylesButton[size]) ?? ""
+      }`}
       {...props}
     />
   );
