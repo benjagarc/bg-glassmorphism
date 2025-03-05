@@ -2,7 +2,7 @@ import Button from "@components/Button";
 import { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import { expect } from "@storybook/jest";
-import styles from './index.module.scss';
+import styles from "./index.module.scss";
 
 const meta = {
   title: "Components/Button",
@@ -68,6 +68,19 @@ const meta = {
         },
         type: {
           summary: "small | medium | large",
+        },
+      },
+    },
+    type: {
+      control: { type: "select" },
+      options: ["button", "submit", "reset"],
+      description: "You can choose between different button types.",
+      table: {
+        defaultValue: {
+          summary: "button",
+        },
+        type: {
+          summary: `button | submit | reset`,
         },
       },
     },
@@ -152,5 +165,18 @@ export const ClassName: Story = {
     const classNameButton = await canvas.getByRole("button");
     await expect(classNameButton).toBeInTheDocument();
     await expect(classNameButton).toHaveClass(/my-custom-class/i);
+  },
+};
+
+export const types: Story = {
+  args: {
+    children: "Click me",
+    type: "submit",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const typeButton = await canvas.getByRole("button");
+    await expect(typeButton).toBeInTheDocument();
+    await expect(typeButton).toHaveAttribute("type", expect.stringMatching(/button|submit|reset/i));
   },
 };
