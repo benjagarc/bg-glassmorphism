@@ -1,7 +1,7 @@
 import { Input } from "@components/Input";
 import { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
-import { expect } from "@storybook/jest";
+import { expect,jest } from "@storybook/jest";
 
 const meta = {
   title: "Components/Input",
@@ -50,6 +50,14 @@ const meta = {
         },
         type: {
           summary: `text | number | email | password`,
+        },
+      },
+    },
+    onChange: {
+      description: "Function to call when the input changes",
+      table: {
+        type: {
+          summary: "() => void",
         },
       },
     },
@@ -112,5 +120,20 @@ export const Disabled: Story = {
     await expect(disabledInput).toBeInTheDocument();
     await expect(disabledInput).toBeDisabled();
     await expect(disabledInput).not.toBeEnabled();
-  }
+  },
 };
+
+
+export const onChange: Story = {
+  args: {
+    name: "onChange",
+    onChange: jest.fn()
+  },
+  play: async ({ canvasElement, args}) => {
+    const canvas = within(canvasElement);
+    const onChangeInput = await canvas.getByRole("textbox");
+    await userEvent.type(onChangeInput, "Hello world");
+    await expect(onChangeInput).toBeInTheDocument();
+    await expect(args.onChange).toHaveBeenCalled();
+  }
+}
