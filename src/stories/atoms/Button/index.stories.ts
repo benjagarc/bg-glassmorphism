@@ -1,5 +1,8 @@
 import Button from "@components/Button";
 import { Meta, StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
+import styles from './index.module.scss';
 
 const meta = {
   title: "Components/Button",
@@ -75,15 +78,24 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Colors: Story = {
+export const Default: Story = {
   args: {
-    children: "Hello world",
+    children: "Click me",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const defaultButton = await canvas.getByRole("button");
+    await userEvent.click(defaultButton);
+    await expect(defaultButton).toBeInTheDocument();
+    await expect(defaultButton).toHaveClass(
+      /primary|secondary|success|danger|warning|info|button/i
+    );
   },
 };
 
 export const Sizes: Story = {
   args: {
-    children: "Hello world",
+    children: "Click me",
     size: "small",
   },
   argTypes: {
@@ -92,19 +104,52 @@ export const Sizes: Story = {
       options: ["small", "medium", "large"],
     },
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const smallButton = await canvas.getByRole("button");
+    await userEvent.click(smallButton);
+    await expect(smallButton).toBeInTheDocument();
+    await expect(smallButton).toHaveClass(/small|medium|large/i);
+  },
 };
 
 export const Outline: Story = {
   args: {
-    children: "Hello world",
+    children: "Click me",
     variant: "primary",
     outline: true,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const outlineButton = await canvas.getByRole("button");
+    await expect(outlineButton).toBeInTheDocument();
+    await expect(outlineButton).toHaveClass(/outline/i);
   },
 };
 
 export const Disabled: Story = {
   args: {
-    children: "Hello world",
+    children: "Click me",
     disabled: true,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const disabledButton = await canvas.getByRole("button");
+    await expect(disabledButton).toBeInTheDocument();
+    await expect(disabledButton).toBeDisabled();
+  },
+};
+
+export const ClassName: Story = {
+  args: {
+    className: `${styles["my-custom-class"]}`,
+    children: "Click me",
+    variant: "primary",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const classNameButton = await canvas.getByRole("button");
+    await expect(classNameButton).toBeInTheDocument();
+    await expect(classNameButton).toHaveClass(/my-custom-class/i);
   },
 };
