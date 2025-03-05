@@ -1,5 +1,7 @@
 import { Input } from "@components/Input";
 import { Meta, StoryObj } from "@storybook/react";
+import { userEvent, within } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
 
 const meta = {
   title: "Components/Input",
@@ -58,9 +60,16 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Basic: Story = {
+export const Default: Story = {
   args: {
     name: "input",
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const defaultInput = await canvas.getByRole("textbox");
+    await expect(defaultInput).toBeInTheDocument();
+    await userEvent.type(defaultInput, "Hello world");
+    await expect(defaultInput).toHaveValue("Hello world");
   },
 };
 
@@ -69,6 +78,13 @@ export const Error: Story = {
     name: "input",
     error: true,
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const errorInput = await canvas.getByRole("textbox");
+    await expect(errorInput).toBeInTheDocument();
+    await userEvent.type(errorInput, "Error");
+    await expect(errorInput).toHaveClass(/error/i);
+  },
 };
 
 export const Dark: Story = {
@@ -76,11 +92,25 @@ export const Dark: Story = {
     name: "input",
     dark: true,
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const darkInput = await canvas.getByRole("textbox");
+    await expect(darkInput).toBeInTheDocument();
+    await userEvent.type(darkInput, "Dark styles");
+    await expect(darkInput).toHaveClass(/bg-x3dark/i);
+  },
 };
 
 export const Disabled: Story = {
   args: {
     name: "input",
     disabled: true,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const disabledInput = await canvas.getByRole("textbox");
+    await expect(disabledInput).toBeInTheDocument();
+    await expect(disabledInput).toBeDisabled();
+    await expect(disabledInput).not.toBeEnabled();
   }
-}
+};
