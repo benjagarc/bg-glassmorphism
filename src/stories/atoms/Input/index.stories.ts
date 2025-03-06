@@ -2,6 +2,7 @@ import { Input } from "@components/Input";
 import { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
 import { expect, jest } from "@storybook/jest";
+import customClass from "../Button/index.module.scss";
 
 const meta = {
   title: "Components/Input",
@@ -164,5 +165,18 @@ export const onBlur: Story = {
     await expect(onBlurInput).toBeInTheDocument();
     await onBlurInput.blur();
     await expect(args.onBlur).toHaveBeenCalled();
+  },
+};
+
+export const className: Story = {
+  args: {
+    name: "custom-class",
+    className: `${customClass["my-custom-class"]}`,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const classNameInput = await canvas.getByRole("textbox");
+    await expect(classNameInput).toBeInTheDocument();
+    await expect(classNameInput).toHaveClass(/my-custom-class/i);
   },
 };
