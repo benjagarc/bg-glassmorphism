@@ -56,3 +56,10 @@ export const dark: Story = {
     dark: true,
   },
 };
+
+export const color: Story = {
+  args: {
+    id: "checkbox",
+    color: "green"
+  }
+}
