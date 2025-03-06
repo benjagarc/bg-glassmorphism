@@ -1,9 +1,9 @@
-import Checkbox from "@components/Switch";
+import Switch from "@components/Switch";
 import { Meta, StoryObj } from "@storybook/react";
 
 const meta = {
   title: "Components/Switch",
-  component: Checkbox,
+  component: Switch,
   parameters: {
     layout: "centered",
   },
@@ -23,8 +23,15 @@ const meta = {
       options: ["primary", "secondary", "success", "danger", "warning", "info"],
       control: { type: "select" },
     },
+    id: {
+      control: { type: "text" },
+      description: "A unique identifier for the switch component.",
+      table: {
+        defaultValue: { summary: "" },
+      },
+    }
   },
-} satisfies Meta<typeof Checkbox>;
+} satisfies Meta<typeof Switch>;
 
 export default meta;
 
@@ -40,5 +47,12 @@ export const disabled: Story = {
   args: {
     id: "check",
     disabled: true,
+  },
+};
+
+export const dark: Story = {
+  args: {
+    id: "checkbox",
+    dark: true,
   },
 };
