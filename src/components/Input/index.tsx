@@ -6,9 +6,14 @@ export const Input: FC<InputProps> = (props) => {
   const { className, error, dark } = props;
   return (
     <input
-      className={`${className ?? ""} ${styles["custom-input"]} ${
-        error ? styles["error"] : ""
-      } ${dark ? "bg-x3dark" : "bg-x3light"} bg-x3light`}
+      className={[
+        styles["custom-input"],
+        error && styles["error"],
+        dark ? "bg-x3dark" : "bg-x3light",
+        className,
+      ]
+        .filter(Boolean)
+        .join(" ")}
       {...props}
     />
   );
