@@ -1,7 +1,7 @@
 import { Input } from "@components/Input";
 import { Meta, StoryObj } from "@storybook/react";
 import { userEvent, within } from "@storybook/testing-library";
-import { expect,jest } from "@storybook/jest";
+import { expect, jest } from "@storybook/jest";
 
 const meta = {
   title: "Components/Input",
@@ -68,7 +68,14 @@ const meta = {
           summary: "() => void",
         },
       },
-    }
+    },
+    id: {
+      control: { type: "text" },
+      description: "A unique identifier for the switch component.",
+      table: {
+        defaultValue: { summary: "" },
+      },
+    },
   },
 } satisfies Meta<typeof Input>;
 
@@ -131,32 +138,31 @@ export const Disabled: Story = {
   },
 };
 
-
 export const onChange: Story = {
   args: {
     name: "onChange",
-    onChange: jest.fn()
+    onChange: jest.fn(),
   },
-  play: async ({ canvasElement, args}) => {
+  play: async ({ canvasElement, args }) => {
     const canvas = within(canvasElement);
     const onChangeInput = await canvas.getByRole("textbox");
     await userEvent.type(onChangeInput, "Hello world");
     await expect(onChangeInput).toBeInTheDocument();
     await expect(args.onChange).toHaveBeenCalled();
-  }
-}
+  },
+};
 
 export const onBlur: Story = {
   args: {
     name: "onBlur",
-    onBlur: jest.fn()
+    onBlur: jest.fn(),
   },
-  play: async ({ canvasElement, args}) => {
+  play: async ({ canvasElement, args }) => {
     const canvas = within(canvasElement);
     const onBlurInput = await canvas.getByRole("textbox");
     await userEvent.type(onBlurInput, "Hello world");
     await expect(onBlurInput).toBeInTheDocument();
     await onBlurInput.blur();
     await expect(args.onBlur).toHaveBeenCalled();
-  }
-}
+  },
+};
