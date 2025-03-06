@@ -1,5 +1,7 @@
 import Switch from "@components/Switch";
 import { Meta, StoryObj } from "@storybook/react";
+import { within, userEvent } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
 
 const meta = {
   title: "Components/Switch",
@@ -50,12 +52,26 @@ export const Basic: Story = {
   args: {
     id: "name",
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const switchButton = await canvas.getByRole("checkbox", { hidden: true });
+    await expect(switchButton).toBeInTheDocument();
+    await userEvent.click(switchButton);
+    await expect(switchButton).toBeChecked();
+  },
 };
 
 export const disabled: Story = {
   args: {
     id: "check",
     disabled: true,
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const switchButton = await canvas.getByRole("checkbox", { hidden: true });
+    await expect(switchButton).toBeInTheDocument();
+    await expect(switchButton).toBeDisabled();
+    await expect(switchButton).not.toBeChecked();
   },
 };
 
