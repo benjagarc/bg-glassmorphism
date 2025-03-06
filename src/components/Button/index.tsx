@@ -6,6 +6,7 @@ export const Button: FC<ButtonProps> = (props) => {
   const { className, variant, size, outline } = props;
   return (
     <button
+      {...props}
       className={[
         stylesButton["button"],
         outline && stylesButton["outline"],
@@ -15,7 +16,6 @@ export const Button: FC<ButtonProps> = (props) => {
       ]
         .filter(Boolean)
         .join(" ")}
-      {...props}
     />
   );
 };
