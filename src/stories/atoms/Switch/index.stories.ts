@@ -29,7 +29,16 @@ const meta = {
       table: {
         defaultValue: { summary: "" },
       },
-    }
+    },
+    color: {
+      description: "The color of the switch",
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+      control: { type: "color" },
+    },
   },
 } satisfies Meta<typeof Switch>;
 
@@ -60,6 +69,6 @@ export const dark: Story = {
 export const color: Story = {
   args: {
     id: "checkbox",
-    color: "green"
-  }
-}
+    color: "green",
+  },
+};
