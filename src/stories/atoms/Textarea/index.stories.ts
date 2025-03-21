@@ -25,7 +25,7 @@ const meta = {
     },
     error: {
       control: { type: "boolean" },
-      description: "You can set your input field to red",
+      description: "You can set your textarea field to red",
       table: {
         defaultValue: {
           summary: "false",
@@ -34,7 +34,7 @@ const meta = {
     },
     dark: {
       control: { type: "boolean" },
-      description: "You can set your input field to a dark theme",
+      description: "You can set your textarea field to a dark theme",
       table: {
         defaultValue: {
           summary: "false",
@@ -42,7 +42,7 @@ const meta = {
       },
     },
     onChange: {
-      description: "Function to call when the input changes",
+      description: "Function to call when the textarea changes",
       table: {
         type: {
           summary: "() => void",
@@ -50,7 +50,7 @@ const meta = {
       },
     },
     onBlur: {
-      description: "Function to call when the input loses focus",
+      description: "Function to call when the textarea loses focus",
       table: {
         type: {
           summary: "() => void",
@@ -59,7 +59,7 @@ const meta = {
     },
     id: {
       control: { type: "text" },
-      description: "A unique identifier for the switch component.",
+      description: "A unique identifier for the textarea component.",
       table: {
         defaultValue: { summary: "" },
       },

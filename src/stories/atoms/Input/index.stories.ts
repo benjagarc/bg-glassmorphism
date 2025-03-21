@@ -13,7 +13,7 @@ const meta = {
   tags: ["autodocs"],
   argTypes: {
     disabled: {
-      description: "You can choose whether to disable the button or not.",
+      description: "You can choose whether to disable the input or not.",
       control: {
         type: "boolean",
       },
@@ -72,7 +72,7 @@ const meta = {
     },
     id: {
       control: { type: "text" },
-      description: "A unique identifier for the switch component.",
+      description: "A unique identifier for the input component.",
       table: {
         defaultValue: { summary: "" },
       },
