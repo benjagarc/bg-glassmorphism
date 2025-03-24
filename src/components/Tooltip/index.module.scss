@@ -1,0 +1,71 @@
+.container {
+  position: relative;
+  width: fit-content;
+}
+
+.container:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip-text {
+  position: absolute;
+  visibility: hidden;
+  background-color: $primary;
+  padding: 10px 20px;
+  color: $light;
+  border-radius: 10px;
+  bottom: 0px;
+  z-index: 1;
+  opacity: 0;
+  transform: translate(-50%, 100%);
+  transition: $transition-normal;
+  width: max-content;
+  height: fit-content;
+}
+
+.top {
+  transform: translate(-50%, -100%);
+  top: 0px;
+  left: 50%;
+  right: 50%;
+}
+
+.bottom {
+  left: 50%;
+  right: 50%;
+}
+
+.right {
+  transform: translate(0%, -50%);
+  top: 50%;
+  bottom: 50%;
+  height: max-content;
+}
+
+.left {
+  transform: translate(-100%, -50%);
+  top: 50%;
+  bottom: 50%;
+  height: max-content;
+  left: 0px;
+}
+
+.tooltip-text.secondary {
+  background-color: $secondary;
+}
+
+.tooltip-text.success {
+  background-color: $success;
+}
+
+.tooltip-text.warning {
+  background-color: $warning;
+}
+
+.tooltip-text.danger {
+  background-color: $danger;
+}
+.tooltip-text.info {
+  background-color: $info;
+}
