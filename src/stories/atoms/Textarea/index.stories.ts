@@ -65,7 +65,7 @@ const meta = {
       },
     },
   },
-} satisfies Meta<typeof Input>;
+} satisfies Meta<typeof Textarea>;
 
 export default meta;
 
